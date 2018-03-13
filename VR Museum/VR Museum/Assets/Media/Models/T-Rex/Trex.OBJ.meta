@@ -1,0 +1,182 @@
+fileFormatVersion: 2
+guid: 4734660f6a4a2914c9cb5cbdca3f1c7d
+timeCreated: 1502729462
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Cone16
+    100002: Cone17
+    100004: Cone18
+    100006: Cone19
+    100008: Cone20
+    100010: Cone21
+    100012: Cone24
+    100014: Cone25
+    100016: Cone26
+    100018: Cone27
+    100020: Cone29
+    100022: Cone30
+    100024: Group002
+    100026: teeth
+    100028: teethtop
+    100030: treeGroup23113
+    100032: treeGroup26643
+    100034: treeGroup9981
+    100036: treeSphere01
+    100038: treeSphere02
+    100040: //RootNode
+    100042: webbing
+    400000: Cone16
+    400002: Cone17
+    400004: Cone18
+    400006: Cone19
+    400008: Cone20
+    400010: Cone21
+    400012: Cone24
+    400014: Cone25
+    400016: Cone26
+    400018: Cone27
+    400020: Cone29
+    400022: Cone30
+    400024: Group002
+    400026: teeth
+    400028: teethtop
+    400030: treeGroup23113
+    400032: treeGroup26643
+    400034: treeGroup9981
+    400036: treeSphere01
+    400038: treeSphere02
+    400040: //RootNode
+    400042: webbing
+    2300000: Cone16
+    2300002: Cone17
+    2300004: Cone18
+    2300006: Cone19
+    2300008: Cone20
+    2300010: Cone21
+    2300012: Cone24
+    2300014: Cone25
+    2300016: Cone26
+    2300018: Cone27
+    2300020: Cone29
+    2300022: Cone30
+    2300024: Group002
+    2300026: teeth
+    2300028: teethtop
+    2300030: treeGroup23113
+    2300032: treeGroup26643
+    2300034: treeGroup9981
+    2300036: treeSphere01
+    2300038: treeSphere02
+    2300040: webbing
+    3300000: Cone16
+    3300002: Cone17
+    3300004: Cone18
+    3300006: Cone19
+    3300008: Cone20
+    3300010: Cone21
+    3300012: Cone24
+    3300014: Cone25
+    3300016: Cone26
+    3300018: Cone27
+    3300020: Cone29
+    3300022: Cone30
+    3300024: Group002
+    3300026: teeth
+    3300028: teethtop
+    3300030: treeGroup23113
+    3300032: treeGroup26643
+    3300034: treeGroup9981
+    3300036: treeSphere01
+    3300038: treeSphere02
+    3300040: webbing
+    4300000: Cone16
+    4300002: Cone17
+    4300004: Cone18
+    4300006: Cone19
+    4300008: Cone20
+    4300010: Cone21
+    4300012: Cone24
+    4300014: Cone25
+    4300016: Cone26
+    4300018: Cone27
+    4300020: Cone29
+    4300022: Cone30
+    4300024: Group002
+    4300026: teeth
+    4300028: teethtop
+    4300030: treeGroup23113
+    4300032: treeGroup26643
+    4300034: treeGroup9981
+    4300036: treeSphere01
+    4300038: treeSphere02
+    4300040: webbing
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
