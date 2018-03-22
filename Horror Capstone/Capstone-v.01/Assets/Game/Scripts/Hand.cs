@@ -10,7 +10,7 @@ public class Hand : MonoBehaviour {
     public SteamVR_TrackedObject trackedRight;
     public SteamVR_TrackedObject trackedLeft;
 
-    [HideInInspector]
+    
     public SteamVR_TrackedObject handTrackedRight;
     public SteamVR_TrackedObject handTrackedLeft;
 

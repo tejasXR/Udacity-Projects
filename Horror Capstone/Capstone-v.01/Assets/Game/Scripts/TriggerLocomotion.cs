@@ -5,8 +5,8 @@ using UnityEngine;
 public class TriggerLocomotion : MonoBehaviour {
 
     public GameManager gameManager;
-    private SteamVR_Controller.Device device;
-    private SteamVR_TrackedObject trackedObj;
+    public SteamVR_Controller.Device device;
+    public SteamVR_TrackedObject trackedObj;
     private Hand hand;
 
 
@@ -28,7 +28,7 @@ public class TriggerLocomotion : MonoBehaviour {
     public AudioSource afterSprintingAudio;
 
     public GameObject bodyCollider;
-    //private Rigidbody bodyRb; //rigid body of the body Collider;
+    private Rigidbody bodyRb; //rigid body of the body Collider;
 
     [Header("Movement Variables")]
     #region MovementVariables
@@ -52,6 +52,8 @@ public class TriggerLocomotion : MonoBehaviour {
     void Start()
     {
         staminaAmnt = staminaAmntMax;
+        hand = GetComponent<Hand>();
+        bodyRb = bodyCollider.GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -80,7 +82,7 @@ public class TriggerLocomotion : MonoBehaviour {
         else
         {
             sprintSpeed = 0;
-            sprintInertia = Mathf.Lerp(sprintInertia, 0, Time.deltaTime);
+            sprintInertia = Mathf.Lerp(sprintInertia, 0, Time.deltaTime / 3f);
             sprintingAudio.volume = Mathf.Lerp(sprintingAudio.volume, 0f, Time.deltaTime);
             staminaAmnt += staminaRecovery * Time.deltaTime;
             if (staminaAmnt >= staminaAmntMax)
@@ -94,6 +96,9 @@ public class TriggerLocomotion : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        trackedObj = hand.handTrackedRight;
+        device = hand.handDeviceRight;
+
         //Make the bodyCollider follow the player around and make it 
         bodyCollider.transform.position = new Vector3(playerEye.transform.position.x, bodyCollider.transform.position.y, playerEye.transform.position.z);
         cameraRig.transform.position = new Vector3(cameraRig.transform.position.x, bodyCollider.transform.position.y, cameraRig.transform.position.z);
@@ -107,12 +112,17 @@ public class TriggerLocomotion : MonoBehaviour {
                 moveSpeed = triggerAxis + (sprintSpeed * sprintInertia);
                 Vector3 direction = new Vector3(controllerForward.x, 0, controllerForward.z);
 
+                bodyRb.MovePosition(bodyCollider.transform.position + direction * Time.deltaTime);
+
+                cameraRig.transform.position = Vector3.Lerp(new Vector3(cameraRig.transform.position.x, bodyCollider.transform.position.y, cameraRig.transform.position.z), bodyCollider.transform.position, Time.deltaTime * moveSpeed * 5);
+
+
                 //If the bodyCollider hits something within a .5 unit distance, stop, else, move the whole cameraRig
-                RaycastHit hit;
+                /*RaycastHit hit;
                 if (!Physics.SphereCast(new Vector3(bodyCollider.transform.position.x, bodyCollider.transform.position.y + .5f, bodyCollider.transform.position.z), .35f, direction, out hit, .35f, -1, QueryTriggerInteraction.Ignore))
                 {
                     cameraRig.transform.position = Vector3.Lerp(new Vector3(cameraRig.transform.position.x, bodyCollider.transform.position.y, cameraRig.transform.position.z), cameraRig.transform.position + direction, Time.deltaTime * moveSpeed * 5);
-                }
+                }*/
                 //Debug.DrawRay(new Vector3(bodyCollider.transform.position.x, bodyCollider.transform.position.y + .5f, bodyCollider.transform.position.z), direction, Color.green);
             }
         }
