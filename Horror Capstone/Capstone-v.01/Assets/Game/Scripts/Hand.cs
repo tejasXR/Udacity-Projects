@@ -10,8 +10,12 @@ public class Hand : MonoBehaviour {
     public SteamVR_TrackedObject trackedRight;
     public SteamVR_TrackedObject trackedLeft;
 
-    private SteamVR_Controller.Device handRight;
-    private SteamVR_Controller.Device handLeft;
+    [HideInInspector]
+    public SteamVR_TrackedObject handTrackedRight;
+    public SteamVR_TrackedObject handTrackedLeft;
+
+    public SteamVR_Controller.Device handDeviceRight;
+    public SteamVR_Controller.Device handDeviceLeft;
 
     public bool isHandRight;
     public bool isHandLeft;
@@ -30,13 +34,19 @@ public class Hand : MonoBehaviour {
             if (gameManager.dominantLeft)
             {
                 // If the dominant hand is a left hand, set the right hand normals to the left controller
-                handRight = SteamVR_Controller.Input((int)trackedLeft.index);
-                handLeft = SteamVR_Controller.Input((int)trackedRight.index);
+                handTrackedRight = trackedLeft;
+                handTrackedLeft = trackedRight;
+
+                handDeviceRight = SteamVR_Controller.Input((int)trackedLeft.index);
+                handDeviceLeft = SteamVR_Controller.Input((int)trackedRight.index);
             }
             else
             {
-                handRight = SteamVR_Controller.Input((int)trackedRight.index);
-                handLeft = SteamVR_Controller.Input((int)trackedLeft.index);
+                handTrackedRight = trackedRight;
+                handTrackedLeft = trackedLeft;
+
+                handDeviceRight = SteamVR_Controller.Input((int)trackedRight.index);
+                handDeviceLeft = SteamVR_Controller.Input((int)trackedLeft.index);
             }
         }
     }
