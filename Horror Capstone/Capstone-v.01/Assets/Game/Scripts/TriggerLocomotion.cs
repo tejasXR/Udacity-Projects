@@ -101,7 +101,6 @@ public class TriggerLocomotion : MonoBehaviour {
         device = hand.handDeviceRight;
 
         //Make the bodyCollider follow the player around and make it 
-        bodyCollider.transform.position = new Vector3(playerEye.transform.position.x, bodyCollider.transform.position.y, playerEye.transform.position.z);
         //bodyCollider.transform.position = new Vector3(4, 5, 1);
         cameraRig.transform.position = new Vector3(cameraRig.transform.position.x, bodyCollider.transform.position.y, cameraRig.transform.position.z);
 
@@ -113,6 +112,7 @@ public class TriggerLocomotion : MonoBehaviour {
                 controllerForward = trackedObj.transform.forward;
                 moveSpeed = triggerAxis + (sprintSpeed * sprintInertia);
                 Vector3 direction = new Vector3(controllerForward.x, 0, controllerForward.z);
+                bodyCollider.transform.position = new Vector3(playerEye.transform.position.x, bodyCollider.transform.position.y, playerEye.transform.position.z);
 
                 //bodyRb.MovePosition(bodyCollider.transform.position + direction * Time.deltaTime);
 
