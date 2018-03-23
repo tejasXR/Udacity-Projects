@@ -28,6 +28,7 @@ public class TriggerLocomotion : MonoBehaviour {
     public AudioSource afterSprintingAudio;
 
     public GameObject bodyCollider;
+    public GameObject footCollider;
     private Rigidbody bodyRb; //rigid body of the body Collider;
 
     [Header("Movement Variables")]
@@ -101,6 +102,7 @@ public class TriggerLocomotion : MonoBehaviour {
 
         //Make the bodyCollider follow the player around and make it 
         bodyCollider.transform.position = new Vector3(playerEye.transform.position.x, bodyCollider.transform.position.y, playerEye.transform.position.z);
+        //bodyCollider.transform.position = new Vector3(4, 5, 1);
         cameraRig.transform.position = new Vector3(cameraRig.transform.position.x, bodyCollider.transform.position.y, cameraRig.transform.position.z);
 
         if (trackedObj.gameObject.activeInHierarchy)
@@ -112,10 +114,11 @@ public class TriggerLocomotion : MonoBehaviour {
                 moveSpeed = triggerAxis + (sprintSpeed * sprintInertia);
                 Vector3 direction = new Vector3(controllerForward.x, 0, controllerForward.z);
 
-                bodyRb.MovePosition(bodyCollider.transform.position + direction * Time.deltaTime);
+                //bodyRb.MovePosition(bodyCollider.transform.position + direction * Time.deltaTime);
 
-                cameraRig.transform.position = Vector3.Lerp(new Vector3(cameraRig.transform.position.x, bodyCollider.transform.position.y, cameraRig.transform.position.z), bodyCollider.transform.position, Time.deltaTime * moveSpeed * 5);
+                //cameraRig.transform.position = Vector3.Lerp(new Vector3(cameraRig.transform.position.x, footCollider.transform.position.y, cameraRig.transform.position.z), new Vector3(bodyCollider.transform.position.x, footCollider.transform.position.y, bodyCollider.transform.position.z), Time.deltaTime * moveSpeed * 5);
 
+                cameraRig.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Force);
 
                 //If the bodyCollider hits something within a .5 unit distance, stop, else, move the whole cameraRig
                 /*RaycastHit hit;
